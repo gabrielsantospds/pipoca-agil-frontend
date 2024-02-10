@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -62,7 +62,7 @@ import { LoginComponent } from './home/login/login.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
