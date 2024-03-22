@@ -29,6 +29,8 @@ import { HomepageViewComponent } from './views/homepage-view/homepage-view.compo
 import { LoginViewComponent } from './views/login-view/login-view.component';
 import { UserDataViewComponent } from './views/user-data-view/user-data-view.component';
 import { LoginComponent } from './home/login/login.component';
+import { DialogChangesComponent } from './template/dialog-changes/dialog-changes.component';
+import { DialogConfirmComponent } from './template/dialog-confirm/dialog-confirm.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { LoginComponent } from './home/login/login.component';
     HomepageViewComponent,
     LoginViewComponent,
     UserDataViewComponent,
-    LoginComponent
+    LoginComponent,
+    DialogChangesComponent,
+    DialogConfirmComponent
   ],
   imports: [
     BrowserModule,

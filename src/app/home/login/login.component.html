@@ -36,6 +36,11 @@
                         <p class="mat-button-content">Entrar</p>
                     </button>
                 </form>
+                <div class="error-message-container">
+                    <mat-error *ngIf="loginError">
+                        Credenciais inválidas
+                    </mat-error>
+                </div>
             </div>
         </div>
         <div>

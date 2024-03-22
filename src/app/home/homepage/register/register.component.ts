@@ -222,11 +222,10 @@ export class RegisterComponent implements OnInit {
         {
           next: (data) => {
             this.validator.validatorMessage('success')
-            console.log(data)
           },
           error: (error) => {
+            this.validator.successMessage = false
             this.validator.validatorMessage('unsuccess')
-            console.log(error)
           }
         }
       )

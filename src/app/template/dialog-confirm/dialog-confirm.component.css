@@ -1,0 +1,15 @@
+h1 {
+    margin-top: 50px;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    color: #424242;
+}
+
+.content {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

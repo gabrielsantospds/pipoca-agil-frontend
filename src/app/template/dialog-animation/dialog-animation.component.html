@@ -1,4 +1,4 @@
-<div class="mat-card">
+<div class="mat-card" *ngIf="successMessage">
     <div style="display: flex; justify-content: end;">
         <button mat-button mat-dialog-close style="padding-left: 16px;">
             <mat-icon>
@@ -6,11 +6,27 @@
             </mat-icon>
         </button>
     </div>
-    <img src={{data.image}} alt="check-circle" class    ="img">
+    <img src="assets/check-circle.png" alt="check-circle" class    ="img">
     <h1>
-        {{data.title}}
+        Cadastro efetuado com sucesso!
     </h1>
     <h3 style="width: 374px; margin: auto;">
-        {{data.message}}
+        Você receberá um código de verificação no seu e-mail.
+    </h3>
+</div>
+<div class="mat-card" *ngIf="!successMessage">
+    <div style="display: flex; justify-content: end;">
+        <button mat-button mat-dialog-close style="padding-left: 16px;">
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </div>
+    <img src="assets/check-circle_svgrepo.com.png" alt="check-circle" class    ="img">
+    <h1>
+        E-mail já cadastrado
+    </h1>
+    <h3 style="width: 374px; margin: auto;">
+        O e-mail que você utilizou já foi cadastrado anteriormente. Faça login para ter acesso a sua conta
     </h3>
 </div>

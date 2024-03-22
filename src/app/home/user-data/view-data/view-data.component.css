@@ -49,6 +49,7 @@
     display: inline-block;
     text-decoration: none;
     margin-left: 80px;
+    cursor: pointer;
 }
 
 .content {

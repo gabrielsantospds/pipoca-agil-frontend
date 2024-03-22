@@ -43,4 +43,8 @@ export class RequestsService {
     return this.http.get<T>(`${this.url}user/${path}/profile`, {headers: this.setAuthorization(auth)})
   }
 
+  delete<T>(id: string, auth: string, path: string): Observable<T> {
+    return this.http.delete<T>(`${this.url}user/${id}/${path}`, {headers: this.setAuthorization(auth)})
+  }
+
 }

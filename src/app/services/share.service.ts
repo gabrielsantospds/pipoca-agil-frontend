@@ -6,13 +6,11 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class ShareService {
 
+  private readonly loginErrorKey = 'loginError';
+
   private scrollSubject = new BehaviorSubject<string | null>(null)
 
   scrollRequested$ = this.scrollSubject.asObservable()
-
-  private accessSubject = new BehaviorSubject<string[] | null>(null)
-  
-  accessRequired$ = this.accessSubject.asObservable()
 
   constructor() { }
 
@@ -20,8 +18,15 @@ export class ShareService {
     this.scrollSubject.next(target)
   }
 
-  requestAccess(auth: string, sub: string) {
-    let values = [auth, sub]
-    this.accessSubject.next(values)
+  handleLoginError(): void {
+    sessionStorage.setItem(this.loginErrorKey, 'true');
+  }
+
+  clearLoginError(): void {
+    sessionStorage.removeItem(this.loginErrorKey);
+  }
+
+  isLoginError(): boolean {
+    return sessionStorage.getItem(this.loginErrorKey) === 'true';
   }
 }

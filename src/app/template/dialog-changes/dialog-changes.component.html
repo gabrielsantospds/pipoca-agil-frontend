@@ -1,0 +1,17 @@
+<div class="container">
+    <div style="display: flex; justify-content: end;">
+        <button mat-button mat-dialog-close style="padding-left: 16px;">
+            <mat-icon>
+                close
+            </mat-icon>
+        </button>
+    </div>
+    <h1>Tem certeza que deseja excluir sua conta?</h1>
+    <h4>Para reativar sua  conta, por favor cadastre novamente o e-mail utilizado.</h4>
+    <button mat-button class="button confirm" style="color: white;" (click)="deleteAccount()">
+        Sim
+    </button>
+    <button mat-button mat-dialog-close class="button cancel" style="color: white;">
+        Não
+    </button>
+</div>

@@ -113,3 +113,10 @@
     margin-bottom: 15px;
     color: var(--gray-700);
 }
+
+.error-message-container {
+    height: 20px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 500;
+}
