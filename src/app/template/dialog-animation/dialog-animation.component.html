@@ -1,12 +1,12 @@
 <div class="mat-card" *ngIf="successMessage">
     <div style="display: flex; justify-content: end;">
-        <button mat-button mat-dialog-close style="padding-left: 16px;">
+        <button mat-button class="mat-button" (click)="close()" style="padding-left: 16px;">
             <mat-icon>
                 close
             </mat-icon>
         </button>
     </div>
-    <img src="assets/check-circle.png" alt="check-circle" class    ="img">
+    <img src="assets/check-circle.png" alt="check-circle" class="img">
     <h1>
         Cadastro efetuado com sucesso!
     </h1>
@@ -16,13 +16,13 @@
 </div>
 <div class="mat-card" *ngIf="!successMessage">
     <div style="display: flex; justify-content: end;">
-        <button mat-button mat-dialog-close style="padding-left: 16px;">
+        <button mat-button class="mat-button" (click)="close()" style="padding-left: 16px;">
             <mat-icon>
                 close
             </mat-icon>
         </button>
     </div>
-    <img src="assets/check-circle_svgrepo.com.png" alt="check-circle" class    ="img">
+    <img src="assets/check-circle_svgrepo.com.png" alt="check-circle" class="img">
     <h1>
         E-mail já cadastrado
     </h1>

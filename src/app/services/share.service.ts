@@ -12,10 +12,19 @@ export class ShareService {
 
   scrollRequested$ = this.scrollSubject.asObservable()
 
+  private tokenSubject = new BehaviorSubject<string[] | null>(null)
+
+  tokenRequested$ = this.tokenSubject.asObservable()
+
   constructor() { }
 
-  requestScroll(target: string) {
+  requestScroll(target: string | null) {
     this.scrollSubject.next(target)
+  }
+
+  requestToken(type: string, value: string) {
+    let target = [type, value]
+    this.tokenSubject.next(target)
   }
 
   handleLoginError(): void {

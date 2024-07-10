@@ -1,6 +1,4 @@
 .container {
-    height: 374px;
-    border-radius: 15px;
     padding-left: 15px;
 }
 
@@ -22,13 +20,19 @@ h4 {
     width: 289px;
     height: 66px;
     font-size: 18px;
+    border-radius: 10px !important;
 }
 
 .confirm {
     background-color: var(--success);
+    margin-left: 15px;
 }
 
 .cancel {
     background-color: var(--danger);
-    margin-left: 15px;
+}
+
+.close-button {
+    padding-left: 16px; 
+    border-radius: 0px 15px;
 }

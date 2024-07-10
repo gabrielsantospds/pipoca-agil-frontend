@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Register } from 'src/app/register';
+import { DialogService } from 'src/app/services/dialog.service';
 import { RequestsService } from 'src/app/services/requests.service';
 import { ShareService } from 'src/app/services/share.service';
 import { ValidatorService } from 'src/app/services/validator.service';
@@ -15,10 +17,14 @@ export class ViewDataComponent implements OnInit, OnDestroy {
   register: Register
   private subscription: Subscription | undefined;
 
+  loadedData = false
+
   constructor(
     private requests: RequestsService,
     private shareService: ShareService,
-    private validatorService: ValidatorService
+    private validatorService: ValidatorService,
+    private dialogService: DialogService,
+    private router: Router
   ) {
     this.register = new Register()
   }
@@ -36,7 +42,7 @@ export class ViewDataComponent implements OnInit, OnDestroy {
           birthDate: data.birthDate,
           password: "******"
         }
-        console.log(data)
+        this.loadedData = true
       },
       error: (err) => {
         console.log(err)
@@ -50,7 +56,11 @@ export class ViewDataComponent implements OnInit, OnDestroy {
     }
   }
 
+  updateAccount() {
+    this.router.navigate(['user-data/update'])
+  }
+
   deleteAccount() {
-    this.validatorService.openChangesDialog("100ms", "100ms")
+    this.dialogService.openChangesDialog()
   }
 }

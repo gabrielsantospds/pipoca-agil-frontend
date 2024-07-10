@@ -1,5 +1,6 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { DialogService } from 'src/app/services/dialog.service';
 import { RequestsService } from 'src/app/services/requests.service';
 import { ShareService } from 'src/app/services/share.service';
 import { ValidatorService } from 'src/app/services/validator.service';
@@ -9,7 +10,7 @@ import { ValidatorService } from 'src/app/services/validator.service';
   templateUrl: './dialog-changes.component.html',
   styleUrls: ['./dialog-changes.component.css']
 })
-export class DialogChangesComponent implements OnInit {
+export class DialogChangesComponent {
 
   auth!: string
   sub!: string
@@ -18,7 +19,8 @@ export class DialogChangesComponent implements OnInit {
     private requests: RequestsService,
     private shareService: ShareService,
     private validatorService: ValidatorService,
-    public dialogRef: MatDialogRef<DialogChangesComponent>
+    private dialogService: DialogService,
+    public dialogRef: DialogRef<DialogChangesComponent>
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class DialogChangesComponent implements OnInit {
     this.requests.delete(this.sub, this.auth, "disable").subscribe({
       next: (data) => {
         this.dialogRef.close()
-        this.validatorService.openConfirmDialog("100ms", "100ms")
+        this.dialogService.openConfirmDialog("Conta excluída com sucesso!", "home")
         sessionStorage.clear()
       },
       error: (err) => {
@@ -38,4 +40,9 @@ export class DialogChangesComponent implements OnInit {
       }
     })
   }
+
+  close() {
+    this.dialogRef.close()
+  }
+  
 }

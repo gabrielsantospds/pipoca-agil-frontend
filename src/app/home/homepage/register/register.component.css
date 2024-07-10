@@ -50,6 +50,7 @@
 }
 
 .mat-card-title-light {
+    color: var(--primary-dark);
     padding-bottom: 15px;
     font-size: 30px;
     font-style: normal;
@@ -232,21 +233,69 @@
     margin-bottom: 0;
 }
 
-.mat-form-field {
-    margin-top: 22px;
-    border-radius: 10px;
-    width: 100%;
+label {
+    color: var(--primary-dark);
+    font-weight: 500;
 }
 
-::ng-deep .mat-mdc-form-field-bottom-align {
-    height: 14px;
+.password-container { 
+    display: flex;
+    min-width: 400px;
+}
+
+.input {
+    width: 343px;
+    height: 46px;
+    border: solid 1.5px white;
+    border-radius: 10px;
+    padding: 0;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.input:hover {
+    border: solid 1.5px var(--primary-light);
+}
+
+.input:focus {
+    outline: none;
+    border: solid 1.5px var(--primary-dark);
+}
+
+input.ng-invalid {
+    border: solid 1.5px red !important;
+}
+
+.error-container {
+    height: 25px;
+}
+
+.error-content {
+    max-height: 13px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.75em;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+
+.icon-button {
+    z-index: 1;
+    position: relative;
+    right: 60px;
+}
+
+mat-icon {
+    color: var(--primary-dark);
 }
 
 .mat-button {
     margin: auto;
     width: 100%;
     height: 51px;
-    margin-top: 50px;
+    border-radius: 7px !important;
 }
 
 .mat-button-content {
@@ -268,8 +317,4 @@
 
 .mat-icon-button {
     margin-right: 20px;
-}
-
-.mat-input {
-    margin-left: 15px;
 }

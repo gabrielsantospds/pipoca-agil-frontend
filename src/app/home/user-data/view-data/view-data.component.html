@@ -1,29 +1,26 @@
-<mat-card class="container">
-    <div class="header">
-        <div class="box-title">
-            <h2 class="title">Dados de cadastro</h2>
-        </div>
-        <div class="box-icon">
-            <a class="link-icon">
-                <img src="assets/pencil-square.png" alt="pencil-icon" class="pencil-icon">
-            </a>
-            <a class="link-icon" (click)="deleteAccount()">
-                <img src="assets/person-x.png" alt="person-icon" class="person-icon">
-            </a>
-        </div>
+<div class="content">
+    <div class="box-subtitle">
+        <h3 class="subtitle">Nome</h3>
+        <h3 class="subtitle">Data de Nascimento</h3>
+        <h3 class="subtitle" style="margin-bottom: 70px;">E-mail</h3>
+        <h3 class="subtitle">Senha</h3>
     </div>
-    <div class="content">
-        <div class="box-subtitle">
-            <h3 class="subtitle">Nome</h3>
-            <h3 class="subtitle">E-mail</h3>
-            <h3 class="subtitle">Senha</h3>
-            <h3 class="subtitle">Data de Nascimento</h3>
-        </div>
-        <div class="box-text">
-            <p class="text" style="margin-bottom: 65px;">{{register.name}}</p>
-            <p class="text" style="margin-bottom: 70px;">{{register.email}}</p>
-            <p class="text" style="margin-bottom: 84px;">{{register.password}}</p>
-            <p class="text">{{register.birthDate}}</p>
-        </div>
+    <div class="box-text">
+        <input class="input" type="text" value="{{register.name}}" disabled *ngIf="loadedData">
+        <input class="input" type="text" value="..." disabled *ngIf="!loadedData">
+        <input class="input" type="text" value="{{register.birthDate}}" disabled *ngIf="loadedData">
+        <input class="input" type="text" value="..." disabled *ngIf="!loadedData">
+        <input class="input" type="text" value="{{register.email}}" disabled *ngIf="loadedData">
+        <input class="input" type="text" value="..." disabled *ngIf="!loadedData">
+        <input class="input" type="text" value="**************" disabled *ngIf="loadedData">
+        <input class="input" type="text" value="..." disabled *ngIf="!loadedData">
+        <button class="edit-button button" (click)="updateAccount()">
+            Editar
+        </button>
     </div>
-</mat-card>
+    <div class="box-button">
+        <button class="delete-button button" (click)="deleteAccount()">
+            Excluir conta
+        </button>
+    </div>
+</div>

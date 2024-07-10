@@ -13,7 +13,7 @@
     margin-right: 10px;
 }
 
-.box-text {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +21,8 @@
 
 .input {
     width: 425px;
-    height: 62px;
-    border: solid 1.5px var(--gray-200);
+    height: 61px;
+    border: solid 2px var(--gray-200);
     background-color: var(--gray-200);
     border-radius: 10px;
     font-size: 24px;
@@ -30,8 +30,42 @@
     font-weight: 600;
     line-height: 32px;
     color: var(--gray-600);
-    margin-bottom: 44px;
+    margin-bottom: 4px;
     padding-left: 24px;
+}
+
+.fake-input {
+    margin-bottom: 44px;
+}
+
+.data-input {
+    background-color: white;
+    border: solid 2px white;
+}
+
+.enabled-input:hover {
+    border: solid 2px var(--primary-light);
+}
+
+.enabled-input:focus {
+    outline: none;
+    border: solid 2px var(--primary-dark);
+}
+
+input.ng-invalid {
+    border: solid 2px red !important;
+}
+
+.error-field {
+    height: 40px;
+    width: 100%;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85em;
+    padding-left: 5px;
+    margin-bottom: 0;
 }
 
 .content {
@@ -44,24 +78,42 @@
     font-family: system-ui;
     font-size: 18px;
     cursor: pointer;
+    margin-top: 40px;
 }
 
-.edit-button {
+.save-button {
     width: 228px;
     height: 61px;
     border: 0;
-    background: #FDDC5C;
+    background: var(--success);
     letter-spacing: -0.5px;
-    color: var(--gray-900);
+    color: white;
 }
 
-.edit-button:hover {
-    background: #ffd83a;
+.save-button:hover {
+    background: #179c36;
 }
 
 .box-button {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
+}
+
+.box-button-content {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #1DB6CE;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    position: relative;
+    left: 15px;
+    bottom: 25px;
 }
 
 .delete-button {

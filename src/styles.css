@@ -15,10 +15,11 @@
     --gray-300: #dee2e6;
     --gray-400: #ced4da;
     --gray-500: #adb5bd;
-    --gray-600: #adb5bd;
+    --gray-600: #6C757D;
     --gray-700: #495057;
     --gray-800: #343a40;
     --gray-900: #212529;
+    --black: #292929;
 }
 
 html, body { height: 100%; }
@@ -26,4 +27,10 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     padding: 0;
     margin: 0;
+}
+
+.test {
+    display: block;
+    border-radius: 15px;
+    background-color: white;
 }

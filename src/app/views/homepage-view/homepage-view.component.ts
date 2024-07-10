@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ShareService } from 'src/app/services/share.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ShareService } from 'src/app/services/share.service';
   templateUrl: './homepage-view.component.html',
   styleUrls: ['./homepage-view.component.css']
 })
-export class HomepageViewComponent {
+export class HomepageViewComponent implements OnInit, OnDestroy {
 
   constructor(
     private shareService: ShareService
@@ -21,11 +21,20 @@ export class HomepageViewComponent {
   scrollToRegister(target: any) {
     const divContainer = document.getElementById('registerComponent')
     if (divContainer) {
-      if(target == 'samePage') {
-        divContainer.scrollIntoView({behavior: "smooth", block: "start"})
-      } else {
-        divContainer.scrollIntoView(true)
+      switch (target) {
+        case 'samePage':
+          divContainer.scrollIntoView({behavior: "smooth", block: "start"})
+          return
+        case 'anotherPage':
+          divContainer.scrollIntoView(true)
+          return
+        default:
+          return
       }
     }
+  }
+
+  ngOnDestroy(){
+this.shareService.requestScroll(null)
   }
 }

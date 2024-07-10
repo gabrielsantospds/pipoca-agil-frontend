@@ -21,3 +21,8 @@ h3 {
     font-weight: 400;
     line-height: 15px;
 }
+
+.mat-button {
+    padding-left: 16px; 
+    border-radius: 0px 15px;
+}

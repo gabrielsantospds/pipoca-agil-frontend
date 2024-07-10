@@ -61,13 +61,13 @@ export class LoginComponent implements OnInit {
         email: this.loginData.value.email,
         password: this.loginData.value.password
       }
-      this.requests.post(this.register, "auth/login").subscribe({
+      this.requests.post<Register>(this.register, "auth/login", false).subscribe({
         next: (data: any) => {
           auth = data.token
           sub = data.sub
           sessionStorage.setItem(this.authenticationKey, auth)
           sessionStorage.setItem(this.subKey, sub)
-          this.router.navigate(['user-data'])
+          this.router.navigate(['user-data/view'])
         },
         error: (err) => {
           this.handleLoginError()

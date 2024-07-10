@@ -120,3 +120,7 @@
     padding-top: 10px;
     font-weight: 500;
 }
+
+.mat-button {
+    border-radius: 7px !important;
+}
